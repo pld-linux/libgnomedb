@@ -82,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 	pkgconfigdir=%{_pkgconfigdir} \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
-# no static modules
-rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.a
+# no static modules and *.la for bonobo or glade modules
+rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.{la,a}
 
 install $RPM_BUILD_ROOT%{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
 
@@ -112,10 +112,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnome-database-components
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/bonobo/monikers/*.so
-%{_libdir}/bonobo/monikers/*.la
 %{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
-%{_libdir}/libglade/2.0/*.la
 %{_datadir}/gnome/capplets/*
 %{_datadir}/mime-info/*
 %{_datadir}/gnome-db
