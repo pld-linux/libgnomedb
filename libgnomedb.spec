@@ -1,24 +1,23 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.1.6
-Release:	3
+Version:	1.1.99
+Release:	1
 License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	8d410f0fa1b2bfed5abbaa7bb9f05df6
+# Source0-md5:	91e9f56946bae16115ada57a89b6f761
 #Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
-Patch0:		%{name}-locale-names.patch
-Patch1:		%{name}-desktop.patch
+Patch0:		%{name}-desktop.patch
 BuildRequires:	GConf2-devel
-BuildRequires:	autoconf >= 2.52
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.1.6
+BuildRequires:	libgda-devel >= 1.1.99
 Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libtool
@@ -43,7 +42,7 @@ Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.1.6
+Requires:	libgda-devel >= 1.1.99
 Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
@@ -69,9 +68,6 @@ Statyczne biblioteki widgetu GNOME-DB.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-
-mv po/{no,nb}.po
 
 %build
 %{__libtoolize}
@@ -101,6 +97,8 @@ install $RPM_BUILD_ROOT%{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_
 
 install -d $RPM_BUILD_ROOT%{_datadir}/gnome/capplets
 mv $RPM_BUILD_ROOT%{_datadir}/control-center-2.0/capplets/database-properties.desktop $RPM_BUILD_ROOT%{_datadir}/gnome/capplets/database-properties.desktop
+
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -135,7 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/libgnomedb
+%{_includedir}/libgnomedb-1.1
 %{_pkgconfigdir}/*.pc
 %{_gtkdocdir}/libgnomedb
 
