@@ -1,6 +1,10 @@
---- libgnomedb-1.0.4/control-center/database-properties.desktop.in.orig	2004-07-24 18:23:40.108123176 +0200
-+++ libgnomedb-1.0.4/control-center/database-properties.desktop.in	2004-07-24 18:33:12.727071864 +0200
-@@ -3,7 +3,7 @@
+diff -urN aa/libgnomedb-1.1.5/control-center/database-properties.desktop.in libgnomedb-1.1.5/control-center/database-properties.desktop.in
+--- aa/libgnomedb-1.1.5/control-center/database-properties.desktop.in	2004-05-01 21:16:05.000000000 +0200
++++ libgnomedb-1.1.5/control-center/database-properties.desktop.in	2004-07-26 01:09:59.865137608 +0200
+@@ -1,9 +1,11 @@
+ [Desktop Entry]
++Encoding=UTF-8
+ _Name=Database Access Properties 
  _Comment=Configure your database environment
  Icon=libgnomedb/gnome-db.png
  Exec=gnome-database-properties
@@ -10,3 +14,4 @@
 -Categories=Application;Settings;AdvancedSettings;
 +Categories=GTK;GNOME;Settings;AdvancedSettings;X-Capplet;
  StartupNotify=true
++# vi: encoding=utf-8
