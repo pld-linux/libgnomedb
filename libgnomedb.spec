@@ -1,12 +1,12 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	0.12.1
+Version:	0.12.2
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	401965088ad1f012f0bafe48e0584ddb
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.12/%{name}-%{version}.tar.bz2
+# Source0-md5:	820fa486a78836df41a11091f7363c36
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
