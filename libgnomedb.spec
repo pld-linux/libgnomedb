@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
@@ -31,6 +31,7 @@ libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
 Summary:	GNOME-DB widget library development
 Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
+Requires:	libgda-devel >= 1.0.0
 Requires:	%{name} = %{version}
 
 %description devel
