@@ -84,7 +84,11 @@ rm -rf $RPM_BUILD_ROOT
 
 # no static modules
 rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.a
+
 install $RPM_BUILD_ROOT%{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
+
+install -d $RPM_BUILD_ROOT%{_datadir}/gnome/capplets
+mv $RPM_BUILD_ROOT%{_datadir}/control-center-2.0/capplets/database-properties.desktop $RPM_BUILD_ROOT%{_datadir}/gnome/capplets/database-properties.desktop
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -112,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_libdir}/libglade/2.0/*.la
-%{_datadir}/control-center-2.0/capplets/*
+%{_datadir}/gnome/capplets/*
 %{_datadir}/mime-info/*
 %{_datadir}/gnome-db
 %{_omf_dest_dir}/%{name}
