@@ -5,17 +5,18 @@ Version:	1.2.1
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.2/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	5e2ff4eaa2bdb02493af4e21b5f5bf8b
 Patch0:		%{name}-desktop.patch
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1.8
+BuildRequires:	automake >= 1:1.8
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
+BuildRequires:	intltool
 BuildRequires:	libgda-devel >= 1.2.1
 Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
