@@ -1,0 +1,12 @@
+diff -urN aa/libgnomedb-1.1.1/configure.in libgnomedb-1.1.1/configure.in
+--- aa/libgnomedb-1.1.1/configure.in	2004-04-01 17:04:27.000000000 +0200
++++ libgnomedb-1.1.1/configure.in	2004-04-04 00:42:49.060600520 +0200
+@@ -62,7 +62,7 @@
+ GETTEXT_PACKAGE=libgnomedb-2
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
+-ALL_LINGUAS="az be ca cs da de el es fa fi fr ga gl hr hu it ja ko ml ms nl no pl pt pt_BR ru sk sr sr@Latn sl sv ta tr uk vi zh_CN zh_TW"
++ALL_LINGUAS="az be ca cs da de el es fa fi fr ga gl hr hu it ja ko ml ms nb nl pl pt pt_BR ru sk sr sr@Latn sl sv ta tr uk vi zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ dnl ******************************
