@@ -1,0 +1,12 @@
+diff -urN aa/libgnomedb-1.0.4/configure.in libgnomedb-1.0.4/configure.in
+--- aa/libgnomedb-1.0.4/configure.in	2004-04-12 12:47:24.000000000 +0200
++++ libgnomedb-1.0.4/configure.in	2004-09-17 00:51:29.338447304 +0200
+@@ -33,8 +33,6 @@
+ 
+ AC_PROG_INTLTOOL
+ 
+-GNOME_PLATFORM_GNOME_2(yes, force)
+-
+ AC_DEFINE_UNQUOTED(GNOME_DB_EXPLICIT_TRANSLATION_DOMAIN, "libgnomedb-2")
+ 
+ dnl ******************************
