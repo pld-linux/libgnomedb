@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.0.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
@@ -84,6 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 # no static modules
 rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.a
+install $RPM_BUILD_ROOT%{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -116,6 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-db
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/libgnomedb
+%{_pixmapsdir}/gnome-db.png
 
 %files devel
 %defattr(644,root,root,755)
