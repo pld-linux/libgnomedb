@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.2.1
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
@@ -87,16 +87,14 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	HTML_DIR=%{_gtkdocdir} \
-	pkgconfigdir=%{_pkgconfigdir} \
-	omf_dest_dir=%{_omf_dest_dir}/%{name}
+	desktopdir=%{_desktopdir} \
+	omf_dest_dir=%{_omf_dest_dir}/%{name} \
+	pkgconfigdir=%{_pkgconfigdir}
 
 # no static modules and *.la for bonobo or glade modules
 rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.{la,a}
 
-install $RPM_BUILD_ROOT%{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
-
-install -d $RPM_BUILD_ROOT%{_datadir}/gnome/capplets
-mv $RPM_BUILD_ROOT%{_datadir}/control-center-2.0/capplets/database-properties.desktop $RPM_BUILD_ROOT%{_datadir}/gnome/capplets/database-properties.desktop
+ln -sf %{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
@@ -121,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gnome-database-properties
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
-%{_datadir}/gnome/capplets/*
+%{_desktopdir}/*
 %{_datadir}/mime-info/*
 %{_datadir}/gnome-db
 %{_omf_dest_dir}/%{name}
