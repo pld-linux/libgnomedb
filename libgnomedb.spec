@@ -1,12 +1,12 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
 Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	77a0ebfec07b257b95dd0f77de85defe
+# Source0-md5:	015d3f329210b1420139c606839f9529
 #Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
 Source1:	%{name}-fdl-appendix.sgml
 Patch0:		%{name}-locale-names.patch
@@ -17,7 +17,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.1.1
+BuildRequires:	libgda-devel >= 1.1.2
 Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libtool
@@ -41,7 +41,7 @@ Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.1.1
+Requires:	libgda-devel >= 1.1.2
 Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
