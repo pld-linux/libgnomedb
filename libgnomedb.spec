@@ -10,8 +10,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.99/%{name}-%{version}.
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
-# compilation fails with current gtksourceview (wait for new libgnomedb)
-#BuildRequires:	gtksourceview-devel
+BuildRequires:	gtksourceview-devel
 BuildRequires:	libgda-devel >= 0.99.0
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	pkgconfig
