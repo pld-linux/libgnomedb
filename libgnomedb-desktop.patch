@@ -12,6 +12,6 @@ diff -urN aa/libgnomedb-1.1.5/control-center/database-properties.desktop.in libg
 +Terminal=false
  Type=Application
 -Categories=Application;Settings;AdvancedSettings;
-+Categories=GTK;GNOME;Settings;AdvancedSettings;
++Categories=GTK;GNOME;Settings;AdvancedSettings;Capplet;
  StartupNotify=true
 +# vi: encoding=utf-8
