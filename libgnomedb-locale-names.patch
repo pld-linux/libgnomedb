@@ -1,0 +1,11 @@
+--- libgnomedb-1.0.4/configure.in.orig	Mon Apr 12 12:47:24 2004
++++ libgnomedb-1.0.4/configure.in	Thu Jul 22 13:15:23 2004
+@@ -62,7 +62,7 @@
+ GETTEXT_PACKAGE=libgnomedb-2
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
+-ALL_LINGUAS="az be ca cs da de el en_CA en_GB es fa fi fr ga gl hr hu id it ja ko ml ms nl no pl pt pt_BR ru sk sr sr@Latn sl sv ta tr uk vi zh_CN zh_TW"
++ALL_LINGUAS="az be ca cs da de el en_CA en_GB es fa fi fr ga gl hr hu id it ja ko ml ms nl nb pl pt pt_BR ru sk sr sr@Latn sl sv ta tr uk vi zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ dnl ******************************
