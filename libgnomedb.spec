@@ -1,17 +1,17 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.0.0
-Release:	2
+Version:	1.0.1
+Release:	1
 License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	e5943ddf8e13cf216deb98433aeb02b7
+# Source0-md5:	ba436b9918fdafebe680f715701d9d5c
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.0.0
+BuildRequires:	libgda-devel >= 1.0.1
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
@@ -31,8 +31,8 @@ libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
 Summary:	GNOME-DB widget library development
 Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
-Requires:	libgda-devel >= 1.0.0
 Requires:	%{name} = %{version}
+Requires:	libgda-devel >= 1.0.1
 
 %description devel
 libgnomedb is a library that eases the task of writing GNOME database
