@@ -1,19 +1,24 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	18ad06d363dc11461c448020babc3dce
-BuildRequires:	autoconf
+Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	77a0ebfec07b257b95dd0f77de85defe
+#Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
+Source1:	%{name}-fdl-appendix.sgml
+Patch0:		%{name}-locale-names.patch
+BuildRequires:	GConf2-devel
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.1.0
+BuildRequires:	libgda-devel >= 1.1.1
+Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -34,9 +39,9 @@ libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
 Summary:	GNOME-DB widget library development
 Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.1.0
+Requires:	libgda-devel >= 1.1.1
 Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
@@ -51,7 +56,7 @@ Ten podpakiet zawiera pliki dla programistów u¿ywaj±cych libgda.
 Summary:	GNU Data Access static libraries
 Summary(pl):	Statyczne biblioteki GNU Data Access
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GNOME-DB widget static libraries.
@@ -61,6 +66,11 @@ Statyczne biblioteki widgetu GNOME-DB.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
+
+install %{SOURCE1} doc/C/fdl-appendix.sgml
 
 %build
 %{__libtoolize}
@@ -110,11 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS
 %{_sysconfdir}/gconf/schemas/*
 %attr(755,root,root) %{_bindir}/gnome-database-properties
-%attr(755,root,root) %{_libdir}/gnome-database-components
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %{_libdir}/bonobo/monikers/*.so
-%{_libdir}/bonobo/monikers/*.la
-%{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_libdir}/libglade/2.0/*.la
 %{_datadir}/gnome/capplets/*
