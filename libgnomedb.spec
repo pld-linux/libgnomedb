@@ -1,12 +1,12 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	0.12.2
+Version:	0.90.0
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	820fa486a78836df41a11091f7363c36
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.90/%{name}-%{version}.tar.bz2
+# Source0-md5:	800b43b563dbba44c88ebd40a95ba213
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
@@ -64,7 +64,7 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure \
-	--enable-gtk-doc \
+	--disable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
@@ -112,6 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libglade/2.0/*.la
 %{_datadir}/control-center-2.0/capplets/*
 %{_datadir}/mime-info/*
+%{_datadir}/%{name}
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/libgnomedb
 
