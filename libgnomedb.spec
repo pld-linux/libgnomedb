@@ -63,6 +63,7 @@ Statyczne biblioteki widgetu GNOME-DB.
 %setup -q
 
 %build
+intltoolize --copy --force
 %{__libtoolize}
 %{__aclocal} -I %{_aclocaldir}/gnome2-macros
 %{__autoconf}
