@@ -13,12 +13,12 @@ BuildRequires:	gtk-doc
 # compilation fails with current gtksourceview (wait for new libgnomedb)
 #BuildRequires:	gtksourceview-devel
 BuildRequires:	libgda-devel >= 0.99.0
-BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
+BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires(post):	GConf2 >= 2.3.0
+Requires(post):	GConf2 >= 2.4.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
