@@ -1,23 +1,23 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.1.99
+Version:	1.2.0
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	91e9f56946bae16115ada57a89b6f761
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.2/%{name}-%{version}.tar.bz2
+# Source0-md5:	d446a3b7b13e0100794feb62fbc296c6
 #Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake
+BuildRequires:	automake >= 1.8
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.1.99
+BuildRequires:	libgda-devel >= 1.2.0
 Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libtool
@@ -42,7 +42,7 @@ Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.1.99
+Requires:	libgda-devel >= 1.2.0
 Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
@@ -133,7 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/libgnomedb-1.1
+%{_includedir}/libgnomedb-1.2
 %{_pkgconfigdir}/*.pc
 %{_gtkdocdir}/libgnomedb
 
