@@ -64,7 +64,7 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-gtk-doc \
+	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
