@@ -13,7 +13,7 @@ Patch2:		%{name}-desktop.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common
+BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
 BuildRequires:	libgda-devel >= 1.0.4
@@ -73,7 +73,7 @@ mv -f po/{no,nb}.po
 %build
 intltoolize --copy --force
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
