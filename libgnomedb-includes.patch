@@ -1,0 +1,26 @@
+diff -Nru libgnomedb-0.12.0.orig/glade/Makefile.am libgnomedb-0.12.0/glade/Makefile.am
+--- libgnomedb-0.12.0.orig/glade/Makefile.am	2003-04-21 13:36:25.000000000 +0200
++++ libgnomedb-0.12.0/glade/Makefile.am	2003-06-03 23:02:24.000000000 +0200
+@@ -5,7 +5,8 @@
+ 	-I$(top_builddir)				\
+ 	-DG_LOG_DOMAIN=\"GnomeDB\"			\
+ 	$(LIBGNOMEDB_CFLAGS) \
+-	$(LIBGLADE_CFLAGS)
++	$(LIBGLADE_CFLAGS) \
++	$(WITHGNOME_CFLAGS)
+ 
+ glademoduledir = $(libdir)/libglade/2.0
+ glademodule_LTLIBRARIES = libgnomedb.la
+diff -Nru libgnomedb-0.12.0.orig/glade/glade-gnomedb.c libgnomedb-0.12.0/glade/glade-gnomedb.c
+--- libgnomedb-0.12.0.orig/glade/glade-gnomedb.c	2003-03-20 21:04:21.000000000 +0100
++++ libgnomedb-0.12.0/glade/glade-gnomedb.c	2003-06-03 22:56:46.000000000 +0200
+@@ -23,6 +23,9 @@
+ #include <libgnomedb/libgnomedb.h>
+ #include <glade/glade-init.h>
+ #include <glade/glade-build.h>
++#include <string.h>
++#include <bonobo/bonobo-window.h>
++#include <libgnomedb/gnome-db-browser.h>
+ 
+ /*
+  * Private functions
