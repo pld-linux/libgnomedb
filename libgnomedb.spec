@@ -112,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libglade/2.0/*.la
 %{_datadir}/control-center-2.0/capplets/*
 %{_datadir}/mime-info/*
-%{_datadir}/%{name}
+%{_datadir}/gnome-db
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/libgnomedb
 
