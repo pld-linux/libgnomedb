@@ -1,0 +1,4 @@
+- updated to 0.12.0
+- added ac/am/lt regeneration
+- added patch for libglade (fixes small typo in configure.in) but apply
+  this, because gnomedb-glade.c needs some fixes
