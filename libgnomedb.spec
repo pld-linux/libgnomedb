@@ -1,23 +1,23 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.0.4
-Release:	6
+Version:	1.2.1
+Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	956ddc8ddb3f4a2594a52b8a1b783f29
-Patch0:		%{name}-gcc34.patch
-Patch1:		%{name}-locale-names.patch
-Patch2:		%{name}-desktop.patch
-Patch3:		%{name}-ac.patch
-BuildRequires:	autoconf
-BuildRequires:	automake
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.2/%{name}-%{version}.tar.bz2
+# Source0-md5:	5e2ff4eaa2bdb02493af4e21b5f5bf8b
+Patch0:		%{name}-desktop.patch
+BuildRequires:	GConf2-devel
+BuildRequires:	autoconf >= 2.59
+BuildRequires:	automake >= 1.8
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.8.0
-BuildRequires:	gtk-doc
+BuildRequires:	gtk+2-devel >= 2:2.4.4
+BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.0.4
+BuildRequires:	libgda-devel >= 1.2.1
+Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -25,6 +25,7 @@ BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
 Requires(post):	GConf2 >= 2.4.0.1
+Requires:	gtk+2 >= 2:2.4.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +41,7 @@ Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.0.4
+Requires:	libgda-devel >= 1.2.1
 Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
@@ -66,11 +67,6 @@ Statyczne biblioteki widgetu GNOME-DB.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-
-mv -f po/{no,nb}.po
 
 %build
 intltoolize --copy --force
@@ -79,6 +75,7 @@ intltoolize --copy --force
 %{__autoconf}
 %{__automake}
 %configure \
+	--disable-schemas-install \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 
@@ -101,6 +98,8 @@ install $RPM_BUILD_ROOT%{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_
 install -d $RPM_BUILD_ROOT%{_datadir}/gnome/capplets
 mv $RPM_BUILD_ROOT%{_datadir}/control-center-2.0/capplets/database-properties.desktop $RPM_BUILD_ROOT%{_datadir}/gnome/capplets/database-properties.desktop
 
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+
 %find_lang %{name} --with-gnome --all-name
 
 %clean
@@ -120,10 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS
 %{_sysconfdir}/gconf/schemas/*
 %attr(755,root,root) %{_bindir}/gnome-database-properties
-%attr(755,root,root) %{_libdir}/gnome-database-components
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %{_libdir}/bonobo/monikers/*.so
-%{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_datadir}/gnome/capplets/*
 %{_datadir}/mime-info/*
@@ -136,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/libgnomedb
+%{_includedir}/libgnomedb-1.2
 %{_pkgconfigdir}/*.pc
 %{_gtkdocdir}/libgnomedb
 
