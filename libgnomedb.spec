@@ -1,12 +1,13 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	0.11.0
+Version:	0.12.0
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
+# Source0-md5:	59d809fbea9d5c7a2e3ec8b95b1c393b
 Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	52d66e5ab4583539612dff612a39a0d0
+Patch0:		%{name}-libglade.patch
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
@@ -56,8 +57,14 @@ Statyczne biblioteki widgetu GNOME-DB.
 
 %prep
 %setup -q
+#%patch0 -p1
 
 %build
+rm -f missing
+%{__libtoolize}
+%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
@@ -103,8 +110,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/bonobo/servers/*
 %attr(755,root,root) %{_libdir}/gnome-vfs-2.0/modules/*.so
 %{_libdir}/gnome-vfs-2.0/modules/*.la
-%attr(755,root,root) %{_libdir}/libglade/2.0/*.so
-%{_libdir}/libglade/2.0/*.la
+#%attr(755,root,root) %{_libdir}/libglade/2.0/*.so
+#%{_libdir}/libglade/2.0/*.la
 %{_datadir}/control-center-2.0/capplets/*
 %{_datadir}/mime-info/*
 %{_omf_dest_dir}/%{name}
