@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Applications/Databases
 Source0:	ftp://ftp.gnome-db.org/pub/gnome-db/sources/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	52d66e5ab4583539612dff612a39a0d0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
