@@ -1,17 +1,17 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	0.99.0
+Version:	1.0.0
 Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.99/%{name}-%{version}.tar.bz2
-# Source0-md5:	9c96ae518956d71165740770eed09ba6
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	e5943ddf8e13cf216deb98433aeb02b7
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 0.99.0
+BuildRequires:	libgda-devel >= 1.0.0
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
