@@ -7,12 +7,15 @@ License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
 # Source0-md5:	ba436b9918fdafebe680f715701d9d5c
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-vfs2-devel
+BuildRequires:	gnome-common
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
 BuildRequires:	libgda-devel >= 1.0.1
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
@@ -32,7 +35,9 @@ Summary:	GNOME-DB widget library development
 Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	gtksourceview-devel
 Requires:	libgda-devel >= 1.0.1
+Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
 libgnomedb is a library that eases the task of writing GNOME database
@@ -58,7 +63,6 @@ Statyczne biblioteki widgetu GNOME-DB.
 %setup -q
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal} -I %{_aclocaldir}/gnome2-macros
 %{__autoconf}
@@ -115,11 +119,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc %{_gtkdocdir}/libgnomedb
-%{_includedir}/libgnomedb
-%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
+%{_includedir}/libgnomedb
 %{_pkgconfigdir}/*.pc
+%{_gtkdocdir}/libgnomedb
 
 %files static
 %defattr(644,root,root,755)
