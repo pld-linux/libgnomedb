@@ -1,19 +1,19 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.0.1
-Release:	2
+Version:	1.1.0
+Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	ba436b9918fdafebe680f715701d9d5c
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
+# Source0-md5:	18ad06d363dc11461c448020babc3dce
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
 BuildRequires:	gtk-doc
 BuildRequires:	gtksourceview-devel
-BuildRequires:	libgda-devel >= 1.0.1
+BuildRequires:	libgda-devel >= 1.1.0
 BuildRequires:	libgnomeui-devel >= 2.4.0.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
@@ -36,7 +36,7 @@ Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.0.1
+Requires:	libgda-devel >= 1.1.0
 Requires:	libgnomeui-devel >= 2.4.0.1
 
 %description devel
@@ -69,6 +69,7 @@ Statyczne biblioteki widgetu GNOME-DB.
 %{__automake}
 %configure \
 	--enable-gtk-doc \
+	--disable-schemas-install \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
