@@ -7,6 +7,7 @@ License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
 # Source0-md5:	956ddc8ddb3f4a2594a52b8a1b783f29
+Patch0:		%{name}-gcc34.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -61,6 +62,7 @@ Statyczne biblioteki widgetu GNOME-DB.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 intltoolize --copy --force
