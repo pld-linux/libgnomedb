@@ -1,19 +1,19 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	0.90.0
-Release:	2
+Version:	0.91.0
+Release:	1
 License:	LGPL
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.90/%{name}-%{version}.tar.bz2
-# Source0-md5:	800b43b563dbba44c88ebd40a95ba213
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.91/%{name}-%{version}.tar.bz2
+# Source0-md5:	bbbe32ea9d8deaa0c77bf1cfbeb5849d
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-vfs2-devel
 BuildRequires:	gtk-doc
 # compilation fails with current gtksourceview (wait for new libgnomedb)
 #BuildRequires:	gtksourceview-devel
+BuildRequires:	libgda-devel >= 0.91.0
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
-BuildRequires:	libgda-devel >= 0.12.1
 BuildRequires:	pkgconfig
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
 # no static modules
-rm -f $RPM_BUILD_ROOT%{_libdir}/{gnome-vfs-2.0/modules,bonobo/monikers,libglade/2.0}/*.a
+rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.a
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -99,15 +99,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
 %{_sysconfdir}/gconf/schemas/*
-%{_sysconfdir}/gnome-vfs-2.0/modules/*
 %attr(755,root,root) %{_bindir}/gnome-database-properties
 %attr(755,root,root) %{_libdir}/gnome-database-components
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/bonobo/monikers/*.so
 %{_libdir}/bonobo/monikers/*.la
 %{_libdir}/bonobo/servers/*
-%attr(755,root,root) %{_libdir}/gnome-vfs-2.0/modules/*.so
-%{_libdir}/gnome-vfs-2.0/modules/*.la
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_libdir}/libglade/2.0/*.la
 %{_datadir}/control-center-2.0/capplets/*
