@@ -14,7 +14,7 @@ BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common
+BuildRequires:	gnome-common >= 2.8.0
 BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
@@ -75,7 +75,7 @@ mv po/{no,nb}.po
 
 %build
 %{__libtoolize}
-%{__aclocal} -I %{_aclocaldir}/gnome2-macros
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
