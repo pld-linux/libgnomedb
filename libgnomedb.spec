@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.2.1
 Release:	1
-License:	LGPL
+License:	LGPL v2+
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	5e2ff4eaa2bdb02493af4e21b5f5bf8b
@@ -79,7 +79,6 @@ intltoolize --copy --force
 	--disable-schemas-install \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
-
 %{__make}
 
 %install
