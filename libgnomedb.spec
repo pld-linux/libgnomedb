@@ -22,7 +22,7 @@ Requires(post):	GConf2 >= 2.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-libgnomedb is a library that eases the task of writing gnome database
+libgnomedb is a library that eases the task of writing GNOME database
 programs.
 
 %description -l pl
@@ -35,7 +35,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
 %description devel
-libgnomedb is a library that eases the task of writing gnome database
+libgnomedb is a library that eases the task of writing GNOME database
 programs. This package contains development files.
 
 %description devel -l pl
