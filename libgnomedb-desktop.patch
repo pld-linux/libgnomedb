@@ -1,0 +1,12 @@
+--- libgnomedb-1.0.4/control-center/database-properties.desktop.in.orig	2004-07-24 18:23:40.108123176 +0200
++++ libgnomedb-1.0.4/control-center/database-properties.desktop.in	2004-07-24 18:33:12.727071864 +0200
+@@ -3,7 +3,7 @@
+ _Comment=Configure your database environment
+ Icon=libgnomedb/gnome-db.png
+ Exec=gnome-database-properties
+-Terminal=0
++Terminal=false
+ Type=Application
+-Categories=Application;Settings;AdvancedSettings;
++Categories=GNOME;Settings;AdvancedSettings;
+ StartupNotify=true
