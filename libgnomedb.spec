@@ -2,12 +2,13 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.tar.bz2
 # Source0-md5:	956ddc8ddb3f4a2594a52b8a1b783f29
 Patch0:		%{name}-gcc34.patch
+Patch1:		%{name}-locale-names.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -35,7 +36,7 @@ libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
 Summary:	GNOME-DB widget library development
 Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
 Requires:	libgda-devel >= 1.0.4
 Requires:	libgnomeui-devel >= 2.4.0.1
@@ -52,7 +53,7 @@ Ten podpakiet zawiera pliki dla programistów u¿ywaj±cych libgda.
 Summary:	GNU Data Access static libraries
 Summary(pl):	Statyczne biblioteki GNU Data Access
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GNOME-DB widget static libraries.
@@ -63,6 +64,9 @@ Statyczne biblioteki widgetu GNOME-DB.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
 
 %build
 intltoolize --copy --force
