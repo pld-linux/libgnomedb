@@ -9,6 +9,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.0/%{name}-%{version}.t
 # Source0-md5:	956ddc8ddb3f4a2594a52b8a1b783f29
 Patch0:		%{name}-gcc34.patch
 Patch1:		%{name}-locale-names.patch
+Patch2:		%{name}-desktop.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
@@ -65,6 +66,7 @@ Statyczne biblioteki widgetu GNOME-DB.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv -f po/{no,nb}.po
 
