@@ -1,0 +1,12 @@
+diff -Nru libgnomedb-0.12.0.orig/configure.in libgnomedb-0.12.0/configure.in
+--- libgnomedb-0.12.0.orig/configure.in	2003-05-29 01:23:25.000000000 +0200
++++ libgnomedb-0.12.0/configure.in	2003-06-02 14:15:35.000000000 +0200
+@@ -116,7 +116,7 @@
+ AC_SUBST(WITHGNOME_LIBS)
+ 
+ PKG_CHECK_MODULES(LIBGLADE, $LIBGLADE_MODULES, have_libglade=yes, have_libglade=no)
+-AM_CONDITIONAL(HAVE_LIBGLADE, test x"$have_libgdade" = "xyes")
++AM_CONDITIONAL(HAVE_LIBGLADE, test x"$have_libglade" = "xyes")
+ if test x"$have_libglade" = "xyes"
+ then
+ 	LIBGLADE_CFLAGS="$LIBGLADE_CFLAGS -DHAVE_LIBGLADE"
