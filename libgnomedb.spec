@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.2.1
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
@@ -22,10 +22,11 @@ Buildrequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
 Requires(post,postun):	/sbin/ldconfig
 Requires(post,postun):	scrollkeeper
-Requires(post):	GConf2 >= 2.4.0.1
+Requires(post,preun):	GConf2 >= 2.4.0.1
 Requires:	gtk+2 >= 2:2.4.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -97,6 +98,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{bonobo/monikers,libglade/2.0}/*.{la,a}
 ln -sf %{_pixmapsdir}/libgnomedb/gnome-db.png $RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+rm -rf $RPM_BUILD_ROOT%{_datadir}/mime-info
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -105,12 +107,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/ldconfig
-/usr/bin/scrollkeeper-update
-%gconf_schema_install
+%gconf_schema_install libgnomedb.schemas
+%scrollkeeper_update_post
+
+%preun
+%gconf_schema_uninstall libgnomedb.schemas
 
 %postun
 /sbin/ldconfig
-/usr/bin/scrollkeeper-update
+%scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
@@ -120,7 +125,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_desktopdir}/*
-%{_datadir}/mime-info/*
 %{_datadir}/gnome-db
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/libgnomedb
