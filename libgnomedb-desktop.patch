@@ -6,7 +6,8 @@ diff -urN aa/libgnomedb-1.1.5/control-center/database-properties.desktop.in libg
 +Encoding=UTF-8
  _Name=Database Access Properties 
  _Comment=Configure your database environment
- Icon=libgnomedb/gnome-db.png
+-Icon=libgnomedb/gnome-db.png
++Icon=gnome-db.png
  Exec=gnome-database-properties
 -Terminal=0
 +Terminal=false
