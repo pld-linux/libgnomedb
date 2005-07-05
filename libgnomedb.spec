@@ -18,7 +18,7 @@ BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
 BuildRequires:	intltool
 BuildRequires:	libgda-devel >= 1.2.1
-Buildrequires:	libglade2-devel
+BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
