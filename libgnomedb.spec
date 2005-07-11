@@ -1,12 +1,15 @@
+# TODO:
+# - seprate libs subpackage
+#
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.2.2
+Version:	1.3.3
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	cf8b1eb3aa3e7b18f46bc9bc9335dca7
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	3fc7bf59f4e621191bcf3cd8baa6c995
 Patch0:		%{name}-desktop.patch
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.59
@@ -17,7 +20,7 @@ BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
 BuildRequires:	intltool
-BuildRequires:	libgda-devel >= 1.2.1
+BuildRequires:	libgda-devel >= 1.3.3
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
@@ -122,11 +125,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
 %{_sysconfdir}/gconf/schemas/*
-%attr(755,root,root) %{_bindir}/gnome-database-properties
+%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_desktopdir}/*
-%{_datadir}/gnome-db
+%{_datadir}/libgnomedb
 %{_omf_dest_dir}/%{name}
 %{_pixmapsdir}/libgnomedb
 %{_pixmapsdir}/gnome-db.png
@@ -135,7 +138,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/libgnomedb-1.2
+%{_includedir}/libgnomedb-1.3
 %{_pkgconfigdir}/*.pc
 %{_gtkdocdir}/libgnomedb
 
