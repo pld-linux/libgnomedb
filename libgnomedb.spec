@@ -1,15 +1,12 @@
-# TODO:
-# - seprate libs subpackage
-#
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.3.3
+Version:	1.3.91
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	3fc7bf59f4e621191bcf3cd8baa6c995
+# Source0-md5:	aaed16482b54b86de058cf71ba7e0714
 Patch0:		%{name}-desktop.patch
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.59
@@ -20,17 +17,13 @@ BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
 BuildRequires:	intltool
-BuildRequires:	libgda-devel >= 1.3.3
+BuildRequires:	libgda-devel >= 1.3.91
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper
-Requires(post,postun):	/sbin/ldconfig
-Requires(post,postun):	scrollkeeper
-Requires(post,preun):	GConf2 >= 2.4.0.1
-Requires:	gtk+2 >= 2:2.4.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -68,6 +61,21 @@ GNOME-DB widget static libraries.
 
 %description static -l pl
 Statyczne biblioteki widgetu GNOME-DB.
+
+%package -n gnome-database-access-properties
+Summary:	Database access properties
+Summary(pl):	W³a¶ciwo¶ci dostêpu do baz danych
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
+Requires(post,preun):	GConf2 >= 2.4.0.1
+Requires(post,postun):	scrollkeeper
+Requires:	gtk+2 >= 2:2.4.4
+
+%description -n gnome-database-access-properties
+Allows to configure database access properties in GNOME.
+
+%description -n gnome-database-access-properties -l pl
+Pozwala na konfiguracjê dostêpu do baz danych w GNOME.
 
 %prep
 %setup -q
@@ -109,30 +117,23 @@ rm -rf $RPM_BUILD_ROOT%{_datadir}/mime-info
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
+%post -n gnome-database-access-properties
 %gconf_schema_install libgnomedb.schemas
 %scrollkeeper_update_post
 
-%preun
+%preun -n gnome-database-access-properties
 %gconf_schema_uninstall libgnomedb.schemas
 
-%postun
-/sbin/ldconfig
+%postun -n gnome-database-access-properties
 %scrollkeeper_update_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
-%{_sysconfdir}/gconf/schemas/*
-%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %{_libdir}/libglade/2.0/*.so
-%{_desktopdir}/*
-%{_datadir}/libgnomedb
-%{_omf_dest_dir}/%{name}
-%{_pixmapsdir}/libgnomedb
-%{_pixmapsdir}/gnome-db.png
 
 %files devel
 %defattr(644,root,root,755)
@@ -145,3 +146,14 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+
+%files -n gnome-database-access-properties
+%defattr(644,root,root,755)
+%{_sysconfdir}/gconf/schemas/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libglade/2.0/*.so
+%{_desktopdir}/*
+%{_datadir}/libgnomedb
+%{_omf_dest_dir}/%{name}
+%{_pixmapsdir}/libgnomedb
+%{_pixmapsdir}/gnome-db.png
