@@ -39,7 +39,7 @@ Summary(pl):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel
-Requires:	libgda-devel >= 1.2.1
+Requires:	libgda-devel >= 1.3.0
 Requires:	libgnomeui-devel >= 2.10.0-2
 
 %description devel
