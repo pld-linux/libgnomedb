@@ -1,12 +1,12 @@
 Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
-Version:	1.3.91
+Version:	1.9.100
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Databases
-Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	aaed16482b54b86de058cf71ba7e0714
+Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.9/%{name}-%{version}.tar.bz2
+# Source0-md5:	a98ac52f084b1b0abad6b2c53ec034cc
 Patch0:		%{name}-desktop.patch
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.59
@@ -17,7 +17,7 @@ BuildRequires:	gtk+2-devel >= 2:2.4.4
 BuildRequires:	gtk-doc >= 1.0
 BuildRequires:	gtksourceview-devel
 BuildRequires:	intltool
-BuildRequires:	libgda-devel >= 1.3.91
+BuildRequires:	libgda-devel >= 1.9.100
 BuildRequires:	libglade2-devel
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libtool
@@ -111,6 +111,7 @@ ln -sf %{_pixmapsdir}/libgnomedb/gnome-db.png \
 
 rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 rm -rf $RPM_BUILD_ROOT%{_datadir}/mime-info
+rm -f $RPM_BUILD_ROOT%{_libdir}/libgnomedb/plugins/*.{a,la}
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -134,12 +135,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%dir %{_libdir}/libgnomedb
+%dir %{_libdir}/libgnomedb/plugins
+%attr(755,root,root)%{_libdir}/libgnomedb/plugins/lib*.so*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%{_includedir}/libgnomedb-1.3
+%{_includedir}/libgnomedb-1.9
 %{_pkgconfigdir}/*.pc
 %{_gtkdocdir}/libgnomedb
 
