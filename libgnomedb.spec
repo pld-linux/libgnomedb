@@ -2,12 +2,13 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.9.100
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.9/%{name}-%{version}.tar.bz2
 # Source0-md5:	a98ac52f084b1b0abad6b2c53ec034cc
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-gnome.patch
 BuildRequires:	GConf2-devel
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
@@ -80,6 +81,7 @@ Pozwala na konfiguracjê dostêpu do baz danych w GNOME.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__intltoolize}
@@ -89,6 +91,7 @@ Pozwala na konfiguracjê dostêpu do baz danych w GNOME.
 %{__automake}
 %configure \
 	--disable-schemas-install \
+	--enable-gnome \
 	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
