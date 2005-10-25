@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.9.100
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		Applications/Databases
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.9/%{name}-%{version}.tar.bz2
