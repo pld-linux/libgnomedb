@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl):	Biblioteka widgetów GNOME-DB
 Name:		libgnomedb
 Version:	1.2.2
-Release:	3
+Release:	4
 Epoch:		1
 License:	LGPL v2+
 Group:		Applications/Databases
