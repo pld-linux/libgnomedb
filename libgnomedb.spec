@@ -154,7 +154,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libglade/2.0/*.so
 %{_datadir}/gnome-db
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/libgnomedb
 %{_pixmapsdir}/gnome-db.png
 %{_omf_dest_dir}/%{name}
