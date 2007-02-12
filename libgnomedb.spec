@@ -1,5 +1,5 @@
 Summary:	GNOME-DB widget library
-Summary(pl):	Biblioteka widgetu GNOME-DB
+Summary(pl.UTF-8):   Biblioteka widgetu GNOME-DB
 Name:		libgnomedb
 Version:	1.9.100
 Release:	7
@@ -33,12 +33,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libgnomedb is a library that eases the task of writing GNOME database
 programs.
 
-%description -l pl
-libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
+%description -l pl.UTF-8
+libgnomedb jest bibliotekÄ… uÅ‚atwiajÄ…cÄ… pisanie programÃ³w bazodanowych.
 
 %package devel
 Summary:	GNOME-DB widget library development
-Summary(pl):	Dla programistów widgetu GNOME-DB
+Summary(pl.UTF-8):   Dla programistÃ³w widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtksourceview-devel >= 1.6.1
@@ -49,25 +49,25 @@ Requires:	libgnomeui-devel >= 2.15.2
 libgnomedb is a library that eases the task of writing GNOME database
 programs. This package contains development files.
 
-%description devel -l pl
-libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
-Ten podpakiet zawiera pliki dla programistów u¿ywaj±cych libgda.
+%description devel -l pl.UTF-8
+libgnomedb jest bibliotekÄ… uÅ‚atwiajÄ…cÄ… pisanie programÃ³w bazodanowych.
+Ten podpakiet zawiera pliki dla programistÃ³w uÅ¼ywajÄ…cych libgda.
 
 %package static
 Summary:	GNU Data Access static libraries
-Summary(pl):	Statyczne biblioteki GNU Data Access
+Summary(pl.UTF-8):   Statyczne biblioteki GNU Data Access
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GNOME-DB widget static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki widgetu GNOME-DB.
 
 %package -n gnome-database-access-properties
 Summary:	Database access properties
-Summary(pl):	W³a¶ciwo¶ci dostêpu do baz danych
+Summary(pl.UTF-8):   WÅ‚aÅ›ciwoÅ›ci dostÄ™pu do baz danych
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires(post,preun):	GConf2 >= 2.14.0
@@ -77,8 +77,8 @@ Requires:	gtk+2 >= 2:2.10.0
 %description -n gnome-database-access-properties
 Allows to configure database access properties in GNOME.
 
-%description -n gnome-database-access-properties -l pl
-Pozwala na konfiguracjê dostêpu do baz danych w GNOME.
+%description -n gnome-database-access-properties -l pl.UTF-8
+Pozwala na konfiguracjÄ™ dostÄ™pu do baz danych w GNOME.
 
 %prep
 %setup -q
