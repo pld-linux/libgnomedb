@@ -1,5 +1,5 @@
 Summary:	GNOME-DB widget library
-Summary(pl):	Biblioteka widgetów GNOME-DB
+Summary(pl.UTF-8):   Biblioteka widgetÃ³w GNOME-DB
 Name:		libgnomedb
 Version:	1.2.2
 Release:	4
@@ -31,12 +31,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libgnomedb is a library that eases the task of writing GNOME database
 programs.
 
-%description -l pl
-libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
+%description -l pl.UTF-8
+libgnomedb jest bibliotekÄ… uÅ‚atwiajÄ…cÄ… pisanie programÃ³w bazodanowych.
 
 %package devel
 Summary:	GNOME-DB widget library development
-Summary(pl):	Dla programistów widgetu GNOME-DB
+Summary(pl.UTF-8):   Dla programistÃ³w widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gtksourceview-devel >= 1.7.2
@@ -47,37 +47,37 @@ Requires:	libgnomeui-devel >= 2.15.91
 libgnomedb is a library that eases the task of writing GNOME database
 programs. This package contains development files.
 
-%description devel -l pl
-libgnomedb jest bibliotek± u³atwiaj±c± pisanie programów bazodanowych.
-Ten podpakiet zawiera pliki dla programistów u¿ywaj±cych libgda.
+%description devel -l pl.UTF-8
+libgnomedb jest bibliotekÄ… uÅ‚atwiajÄ…cÄ… pisanie programÃ³w bazodanowych.
+Ten podpakiet zawiera pliki dla programistÃ³w uÅ¼ywajÄ…cych libgda.
 
 %package static
 Summary:	GNU Data Access static libraries
-Summary(pl):	Statyczne biblioteki GNU Data Access
+Summary(pl.UTF-8):   Statyczne biblioteki GNU Data Access
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 GNOME-DB widget static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki widgetu GNOME-DB.
 
 %package apidocs
 Summary:	libgnomedb API documentation
-Summary(pl):	Dokumentacja API libgnomedb
+Summary(pl.UTF-8):   Dokumentacja API libgnomedb
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
 libgnomedb API documentation.
 
-%description apidocs -l pl
+%description apidocs -l pl.UTF-8
 Dokumentacja API libgnomedb.
 
 %package -n gnome-database-access-properties
 Summary:	Database access properties
-Summary(pl):	W³a¶ciwo¶ci dostêpu do baz danych
+Summary(pl.UTF-8):   WÅ‚aÅ›ciwoÅ›ci dostÄ™pu do baz danych
 Group:		X11/Applications
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires(post,preun):	GConf2 >= 2.14.0
@@ -86,8 +86,8 @@ Requires(post,postun):	scrollkeeper
 %description -n gnome-database-access-properties
 Allows to configure database access properties in GNOME.
 
-%description -n gnome-database-access-properties -l pl
-Pozwala na konfiguracjê dostêpu do baz danych w GNOME.
+%description -n gnome-database-access-properties -l pl.UTF-8
+Pozwala na konfiguracjÄ™ dostÄ™pu do baz danych w GNOME.
 
 %prep
 %setup -q
