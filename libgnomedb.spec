@@ -1,5 +1,5 @@
 Summary:	GNOME-DB widget library
-Summary(pl.UTF-8):   Biblioteka widgetów GNOME-DB
+Summary(pl.UTF-8):	Biblioteka widgetów GNOME-DB
 Name:		libgnomedb
 Version:	1.2.2
 Release:	4
@@ -36,7 +36,7 @@ libgnomedb jest biblioteką ułatwiającą pisanie programów bazodanowych.
 
 %package devel
 Summary:	GNOME-DB widget library development
-Summary(pl.UTF-8):   Dla programistów widgetu GNOME-DB
+Summary(pl.UTF-8):	Dla programistów widgetu GNOME-DB
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gtksourceview-devel >= 1.7.2
@@ -53,7 +53,7 @@ Ten podpakiet zawiera pliki dla programistów używających libgda.
 
 %package static
 Summary:	GNU Data Access static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki GNU Data Access
+Summary(pl.UTF-8):	Statyczne biblioteki GNU Data Access
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
@@ -65,7 +65,7 @@ Statyczne biblioteki widgetu GNOME-DB.
 
 %package apidocs
 Summary:	libgnomedb API documentation
-Summary(pl.UTF-8):   Dokumentacja API libgnomedb
+Summary(pl.UTF-8):	Dokumentacja API libgnomedb
 Group:		Documentation
 Requires:	gtk-doc-common
 
@@ -77,7 +77,7 @@ Dokumentacja API libgnomedb.
 
 %package -n gnome-database-access-properties
 Summary:	Database access properties
-Summary(pl.UTF-8):   Właściwości dostępu do baz danych
+Summary(pl.UTF-8):	Właściwości dostępu do baz danych
 Group:		X11/Applications
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires(post,preun):	GConf2 >= 2.14.0
