@@ -9,6 +9,7 @@ Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	cf8b1eb3aa3e7b18f46bc9bc9335dca7
 Patch0:		%{name}-desktop.patch
+URL:		http://www.gnome-db.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	GConf2-devel
