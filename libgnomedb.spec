@@ -5,7 +5,7 @@ Version:	1.2.2
 Release:	4
 Epoch:		1
 License:	LGPL v2+
-Group:		Applications/Databases
+Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	cf8b1eb3aa3e7b18f46bc9bc9335dca7
 Patch0:		%{name}-desktop.patch
@@ -37,7 +37,7 @@ libgnomedb jest biblioteką ułatwiającą pisanie programów bazodanowych.
 %package devel
 Summary:	GNOME-DB widget library development
 Summary(pl.UTF-8):	Dla programistów widgetu GNOME-DB
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	gtksourceview-devel >= 1.7.2
 Requires:	libgda-devel >= 1:1.2.3
@@ -54,7 +54,7 @@ Ten podpakiet zawiera pliki dla programistów używających libgda.
 %package static
 Summary:	GNU Data Access static libraries
 Summary(pl.UTF-8):	Statyczne biblioteki GNU Data Access
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
@@ -148,17 +148,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
-%files -n gnome-database-access-properties
-%defattr(644,root,root,755)
-%{_sysconfdir}/gconf/schemas/libgnomedb.schemas
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libglade/2.0/*.so
-%{_datadir}/gnome-db
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/libgnomedb
-%{_pixmapsdir}/gnome-db.png
-%{_omf_dest_dir}/%{name}
-
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
@@ -173,3 +162,14 @@ rm -rf $RPM_BUILD_ROOT
 %files apidocs
 %defattr(644,root,root,755)
 %{_gtkdocdir}/libgnomedb
+
+%files -n gnome-database-access-properties
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libglade/2.0/*.so
+%{_datadir}/gnome-db
+%{_desktopdir}/*.desktop
+%{_pixmapsdir}/libgnomedb
+%{_pixmapsdir}/gnome-db.png
+%{_omf_dest_dir}/%{name}
+%{_sysconfdir}/gconf/schemas/libgnomedb.schemas
