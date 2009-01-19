@@ -13,6 +13,7 @@ Patch1:		%{name}-gtk-doc.patch
 URL:		http://www.gnome-db.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	GConf2-devel
 # only checked for, not used
 #BuildRequires:	evolution-data-server-devel >= 1.0
