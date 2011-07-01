@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl.UTF-8):	Biblioteka widgetów GNOME-DB
 Name:		libgnomedb
 Version:	1.2.2
-Release:	10
+Release:	11
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -123,13 +123,15 @@ rm -rf $RPM_BUILD_ROOT
 	desktopdir=%{_desktopdir}
 
 # no static modules and *.la for glade modules
-rm -f $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/*.{la,a}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libglade/2.0/*.{la,a}
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 ln -sf %{_pixmapsdir}/libgnomedb/gnome-db.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
-rm -rf $RPM_BUILD_ROOT%{_datadir}/mime-info
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/mime-info
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -165,7 +167,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libgnomedb-2.so
-%{_libdir}/libgnomedb-2.la
 %{_includedir}/libgnomedb-1.2
 %{_pkgconfigdir}/libgnomedb.pc
 
