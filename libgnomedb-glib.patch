@@ -1,0 +1,11 @@
+--- libgnomedb-1.2.2/libgnomedb/gnome-db-grid.c.orig	2004-10-09 19:11:03.000000000 +0200
++++ libgnomedb-1.2.2/libgnomedb/gnome-db-grid.c	2013-01-06 09:51:23.778940919 +0100
+@@ -21,7 +21,7 @@
+  */
+ 
+ #include <string.h>
+-#include <glib/gfileutils.h>
++#include <glib.h>
+ #include <libgda/gda-util.h>
+ #include <gtk/gtkcheckmenuitem.h>
+ #include <gtk/gtkdialog.h>

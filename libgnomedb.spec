@@ -2,7 +2,7 @@ Summary:	GNOME-DB widget library
 Summary(pl.UTF-8):	Biblioteka widgetów GNOME-DB
 Name:		libgnomedb
 Version:	1.2.2
-Release:	12
+Release:	13
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -10,6 +10,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/libgnomedb/1.2/%{name}-%{version
 # Source0-md5:	cf8b1eb3aa3e7b18f46bc9bc9335dca7
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-gtk-doc.patch
+Patch2:		%{name}-glib.patch
 URL:		http://www.gnome-db.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
@@ -95,12 +96,13 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 Allows to configure database access properties in GNOME.
 
 %description -n gnome-database-access-properties -l pl.UTF-8
-Pozwala na konfigurację dostępu do baz danych w GNOME.
+Narzędzie pozwalające na konfigurację dostępu do baz danych w GNOME.
 
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__intltoolize}
@@ -130,8 +132,12 @@ rm -rf $RPM_BUILD_ROOT
 ln -sf %{_pixmapsdir}/libgnomedb/gnome-db.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/gnome-db.png
 
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/no
+# obsolete(?)
 %{__rm} -r $RPM_BUILD_ROOT%{_datadir}/mime-info
+
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{sr@Latn,sr@latin}
+# duplicate of nb with obsolete name
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -157,6 +163,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS
 %attr(755,root,root) %{_libdir}/libgnomedb-2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libgnomedb-2.so.4
 # libglade2 module (include it here as lib requires libglade2 anyway)
 %attr(755,root,root) %{_libdir}/libglade/2.0/libgnomedb.so
 # for libgnomedb
