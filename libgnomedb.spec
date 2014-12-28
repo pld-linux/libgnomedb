@@ -18,7 +18,7 @@ BuildRequires:	docbook-dtd412-xml
 BuildRequires:	GConf2-devel
 # only checked for, not used
 #BuildRequires:	evolution-data-server-devel >= 1.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gtk+2-devel >= 2:2.10.1
 BuildRequires:	gtk-doc >= 1.7
